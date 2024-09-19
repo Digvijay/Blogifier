@@ -1,13 +1,7 @@
-using System.Collections.Generic;
+namespace Blogifier.Shared;
 
-namespace Blogifier.Shared
+public class PostModel(PostSlugDto postSlug, string categoriesUrl, MainDto main) : MainModel(main)
 {
-	public class PostModel
-   {
-      public BlogItem Blog { get; set; }
-      public PostItem Post { get; set; }
-      public PostItem Older { get; set; }
-      public PostItem Newer { get; set; }
-      public IEnumerable<PostItem> Related { get; set; }
-   }
+  public PostSlugDto PostSlug { get; set; } = postSlug;
+  public string CategoriesUrl { get; set; } = categoriesUrl;
 }
